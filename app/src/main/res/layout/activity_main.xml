@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- 4:3 Aspect Ratio Viewfinder (3:4 Portrait) -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="3:4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/controlsLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Settings Gear Icon Top Right -->
+    <ImageButton
+        android:id="@+id/btnSettings"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_settings"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Controls Area Below Viewfinder -->
+    <LinearLayout
+        android:id="@+id/controlsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Timer + Red Dot + Zoom -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <!-- Center Timer and Blinking Dot -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/redBlinkingDot"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="@drawable/circle_red"
+                    android:visibility="invisible"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvTimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    android:textColor="#FF0000"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Zoom Controls (+ / -) Stacked -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnZoomIn"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:text="+"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/btnZoomOut"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:text="-"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Bottom Action Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="16dp">
+
+            <!-- Switch Camera (Far Left) -->
+            <ImageButton
+                android:id="@+id/btnSwitchCam"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_camera_switch"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+
+            <!-- Stop Button (Left of Record) -->
+            <ImageButton
+                android:id="@+id/btnStop"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="12dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_stop"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+
+            <!-- Record / Pause Button (Center Red) -->
+            <ImageButton
+                android:id="@+id/btnRecord"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:background="@drawable/circle_red" />
+
+            <!-- Flashlight (Right of Record) -->
+            <ImageButton
+                android:id="@+id/btnFlash"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_flash"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
