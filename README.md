@@ -36,7 +36,7 @@ Most modern smartphones force video recording into 16:9 or taller aspect ratios,
 ### Steps to Run Locally
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com
+   https://github.com/Sunil9551/Video_recorder.git
    ```
 2. Open the project in **Android Studio**.
 3. Let Gradle sync and download the required dependencies.
