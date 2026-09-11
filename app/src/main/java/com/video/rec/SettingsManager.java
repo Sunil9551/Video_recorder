@@ -32,9 +32,9 @@ public class SettingsManager {
         if (width <= 320) baseBitrate = 800_000;          // 800 kbps
         else if (width <= 640) baseBitrate = 2_000_000;   // 2 Mbps
         else if (width <= 960) baseBitrate = 4_000_000;   // 4 Mbps
-        else if (width <= 1440) baseBitrate = 8_000_000;  // 6 Mbps
-        else if (width <= 1600) baseBitrate = 12_000_000; // 8 Mbps
-        else baseBitrate = 20_000_000;                   // 24 Mbps
+        else if (width <= 1440) baseBitrate = 6_000_000;  // 6 Mbps
+        else if (width <= 1600) baseBitrate = 8_000_000; // 8 Mbps
+        else baseBitrate = 24_000_000;                   // 24 Mbps
 
         return (int) (baseBitrate * (fps / 30.0f));
     }
