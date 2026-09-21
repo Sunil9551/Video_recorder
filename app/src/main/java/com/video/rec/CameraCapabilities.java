@@ -336,4 +336,4 @@ public final class CameraCapabilities {
         }
         return null;
     }
-          }
+}
