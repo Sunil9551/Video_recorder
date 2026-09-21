@@ -725,11 +725,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         int count = 0;
-        String name;
-        do {
-            name = String.format(Locale.US, "Video_%04d.mp4", count++);
-        } while (used.contains(name) || (videoDir != null && new File(videoDir, name).exists()));
-        return name;
+String name;
+
+do {
+    name = String.format(Locale.US, "Video_%04d.mp4", count++);
+} while (used.contains(name) ||
+         (videoDir != null && new File(videoDir, name).exists()));
+
+return name;
     }
 
     private void openOutput() throws IOException {
