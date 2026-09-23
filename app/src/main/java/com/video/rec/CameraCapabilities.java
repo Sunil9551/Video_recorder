@@ -42,6 +42,8 @@ public final class CameraCapabilities {
     // width × height × fps × 0.13
     private static final float BITS_PER_PIXEL = 0.13f;
 
+    private static final int MAX_BITRATE = 24_000_000;
+
     private static final Size FALLBACK_SIZE = new Size(640, 480);
 
     private static List<MediaCodecInfo.VideoCapabilities> avcEncoders;
