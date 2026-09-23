@@ -39,11 +39,8 @@ public final class CameraCapabilities {
     private static final float MAX_ZOOM = 4.0f;
 
     // Bitrate formula:
-    // width × height × fps × 0.15
-    private static final float BITS_PER_PIXEL = 0.15f;
-
-    // Maximum bitrate = 24 Mbps.
-    private static final int MAX_BITRATE = 24_000_000;
+    // width × height × fps × 0.13
+    private static final float BITS_PER_PIXEL = 0.13f;
 
     private static final Size FALLBACK_SIZE = new Size(640, 480);
 
